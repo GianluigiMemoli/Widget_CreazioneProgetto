@@ -29,6 +29,7 @@
 </div>
 
 <script>
+import { WIDGET_DEFAULT_DIMENSION, WIDGET_MAX_DIMENSION, WIDGET_MIN_DIMENSION, isResizable } from "./Content/Constants";
 import Wrapper from "./Content/Wrapper.svelte";
 import Grid from "svelte-grid";
 import gridHelp from "svelte-grid/build/helper/index.mjs";
@@ -40,8 +41,11 @@ let items = [
     6: gridHelp.item({ 
       x: 0,
       y: 0,
-      w: 4,
-      h: 2,
+      w: WIDGET_DEFAULT_DIMENSION.w,
+      h: WIDGET_DEFAULT_DIMENSION.h,
+      max: WIDGET_MAX_DIMENSION,
+      min: WIDGET_MIN_DIMENSION,
+      fixed: !isResizable
     }),
     id: id(),
   }
