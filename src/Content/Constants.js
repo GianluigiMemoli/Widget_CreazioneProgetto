@@ -13,3 +13,15 @@ export const WIDGET_MIN_DIMENSION =  { w: 1, h: 1 };
 
 // Author
 export const AUTHOR = "Mario Rossi";
+
+// Theme NON MODIFICARE
+const THEME = {
+    text: "#333333",
+    description: "#7f7f7f",
+    accent: "#f59a23",
+    accentFocused: "#f5c423",
+    primary: "#a1e5ab",
+    primaryFocused: "#8fcc99",
+    secondary: "#eeeeee",
+    secondaryFocused: "#a1e5ab"
+}

@@ -2,6 +2,7 @@
 
     /* NON MODIFICARE -> INIZIO */ 
     import { createEventDispatcher } from 'svelte';
+    import { THEME } from "./Constants";
     export let visible = false;
 	const dispatch = createEventDispatcher();
     const showResult = () => dispatch("showResult"); 
