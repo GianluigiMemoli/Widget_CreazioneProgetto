@@ -11,7 +11,7 @@ La seguente repository serve per la creazione di widget compatibili per il nuovo
 
 Esegui il fork usando il tasto in alto a destra denominato "fork" (clonera la repository sul tuo profilo)
 
-Successivamente per iniziare a lavorare al progetto eseguit il seguente comando da terminale (copierà il tuo fork sul computer che stai usando)
+Successivamente per iniziare a lavorare al progetto esegui il seguente comando da terminale (copierà il tuo fork sul computer che stai usando)
 
 ```bash
 git clone https://github.com/Sense-Square/template-widget-container.git

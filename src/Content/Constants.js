@@ -15,7 +15,7 @@ export const WIDGET_MIN_DIMENSION =  { w: 1, h: 1 };
 export const AUTHOR = "Mario Rossi";
 
 // Theme NON MODIFICARE
-const THEME = {
+export const THEME = {
     text: "#333333",
     description: "#7f7f7f",
     accent: "#f59a23",
