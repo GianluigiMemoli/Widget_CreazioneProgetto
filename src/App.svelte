@@ -2,21 +2,22 @@
 
 <style>
     :global(body){
-        background-color: #1a237e;
+        background-color: #f1f1f1;
     }
 
     .demo-widget {
-        background: #f1f1f1;
         height: 100%;
         width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        border-radius: 16px !important;
+        background-color: #fff;
+        padding: 8px;
+        overflow: auto;
     }
 
     .demo-container {
-        max-width: 1000px;
+        max-width: 3200px;
         width: 100%;
+        margin: 0 auto;
     }
 </style>
 
@@ -30,7 +31,7 @@
 
 <script>
 import { WIDGET_DEFAULT_DIMENSION, WIDGET_MAX_DIMENSION, WIDGET_MIN_DIMENSION, isResizable } from "./Content/Constants";
-import Wrapper from "./Content/Wrapper.svelte";
+import Wrapper from "./Wrapper.svelte";
 import Grid from "svelte-grid";
 import gridHelp from "svelte-grid/build/helper/index.mjs";
 
@@ -52,6 +53,6 @@ let items = [
 ];
 
 const cols = [
-  [ 1200, 6 ],
+  [ 3200, 6 ],
 ];
 </script>

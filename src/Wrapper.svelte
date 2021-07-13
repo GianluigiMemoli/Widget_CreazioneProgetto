@@ -1,7 +1,10 @@
 <script>
-	import Widget from "./Widget.svelte";
+	import Widget from "./Content/Widget.svelte";
 	import { MaterialApp, ProgressCircular, ProgressLinear, Icon } from 'svelte-materialify';
 	import { mdiAlertBox, mdiAccountHardHat } from '@mdi/js';
+
+	export let token = null;
+	export let apikey = null;
 
 	// Status options
 	const LOADING = 0, DONE = 1, ERROR = -1, MAINTENANCE = 2;
@@ -23,7 +26,11 @@
 	
 		<Widget 
 
-			visible={STATUS_WIDGET === DONE}
+			{token}
+
+			{apikey}
+
+			WIDGET_VISIBLE={STATUS_WIDGET === DONE}
 
 			on:showResult={() => {				
 				STATUS_WIDGET = DONE;

@@ -2,8 +2,9 @@
 
     /* NON MODIFICARE -> INIZIO */ 
     import { createEventDispatcher } from 'svelte';
-    import { THEME } from "./Constants";
-    export let visible = false;
+    export let WIDGET_VISIBLE = false;
+    export let apikey = null;
+    export let token = null; 
 	const dispatch = createEventDispatcher();
     const showResult = () => dispatch("showResult"); 
     const showError = (text) => dispatch("showError", {text}); 
@@ -14,7 +15,7 @@
     /* NON MODIFICARE -> FINE */ 
 
     /* ESEMPIO FUNZIONAMENTO ->  INIZIO */
-    import { Button } from 'svelte-materialify';
+    import { Button } from 'svelte-materialify/src';
     setTimeout(() => {
         showResult();
     }, 1000);
@@ -22,7 +23,7 @@
 
 </script>
 
-<main style={visible ? "" : "display: none"}>
+<main style={WIDGET_VISIBLE ? "" : "display: none"}>
 
 
     <!-- ESEMPIO FUNZIONAMENTO ->  INIZIO -->
@@ -30,7 +31,7 @@
         Mostra errore
     </Button>
 
-    <Button class="primary-color" on:click={() => showMaintenance("Esempio di manutenzione")}>
+    <Button class="accent-color" on:click={() => showMaintenance("Esempio di manutenzione")}>
         Mostra manutenzione
     </Button>
 
