@@ -18,6 +18,17 @@
 	let LOADING_TYPE = GENERIC_LOADING;
 	let LOADING_VALUE = 0;
 
+	function getFormData() {
+		let params = new FormData();
+		console.log(apikey);
+		if(token)
+			params.append("token", token);
+		else if(apikey)
+			params.append("apikey", apikey);
+
+		return params
+	}
+
 </script>
 
 <main>
@@ -26,52 +37,48 @@
 	
 		<Widget 
 
-			{token}
-
-			{apikey}
-
 			WIDGET_VISIBLE={STATUS_WIDGET === DONE}
 
-			on:showResult={() => {				
+			showResult={() => {				
 				STATUS_WIDGET = DONE;
 				LOADING_VALUE = 0;
 				TEXT_DESCRIPTION = "";
 			}}
 
-			on:showError={e => {
+			showError={text => {
 				STATUS_WIDGET = ERROR;
 				LOADING_VALUE = 0;
-				TEXT_DESCRIPTION = e.detail.text;
+				TEXT_DESCRIPTION = text;
 			}}
 
-			on:showMaintenance={e => {
+			showMaintenance={text => {
 				STATUS_WIDGET = MAINTENANCE;
 				LOADING_VALUE = 0;
-				TEXT_DESCRIPTION = e.detail.text;
+				TEXT_DESCRIPTION = text;
 			}}
 
-			on:showLoading={e => {
-				console.log(e);
-				
+			showLoading={text => {				
 				STATUS_WIDGET = LOADING;
 				LOADING_TYPE = GENERIC_LOADING;
 				LOADING_VALUE = 0;
-				TEXT_DESCRIPTION = e.detail.text;
+				TEXT_DESCRIPTION = text;
 			}}
 
-			on:showProgressBar={e => {
+			showProgressBar={(text, value=0) => {
 				STATUS_WIDGET = LOADING;
 				LOADING_TYPE = PROGRESSBAR_LOADING;
-				TEXT_DESCRIPTION = e.detail.text;
-				LOADING_VALUE = e.detail.value;
+				TEXT_DESCRIPTION = text;
+				LOADING_VALUE = value;
 			}}
 
-			on:updateProgressBar={e => {
+			updateProgressBar={(text, value=0) => {
 				if(STATUS_WIDGET === LOADING && LOADING_TYPE === PROGRESSBAR_LOADING){
-					TEXT_DESCRIPTION = e.detail.text;
-					LOADING_VALUE = e.detail.value;
+					TEXT_DESCRIPTION = text;
+					LOADING_VALUE = value;
 				}
 			}}
+
+			{getFormData}
 
 		/>
 
