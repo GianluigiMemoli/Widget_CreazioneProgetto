@@ -12,8 +12,9 @@
     let frequenzeStored = get(frequenze);
 
 </script>
+<p class="description-text">Frequenze</p>
+
 <div id="frequenze">
-    <p class="description-text">Frequenze</p>
     {#each Object.keys(frequenzeMap) as frequenza, idx}
         <label>{frequenza}
             <input name = "frequenze"  type="checkbox" on:change={() => updateFrequenze(frequenza)} checked={frequenzeStored[idx] == 1}/>
@@ -25,5 +26,9 @@
     #frequenze > label{
         display: inline;
         margin-right: 1em;
+    }
+    #frequenze{
+        display: flex;
+        flex-direction: row;
     }
 </style>

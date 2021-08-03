@@ -82,7 +82,6 @@
     let currentStep = 0;
 </script>
 
-<p class="title-text">Creazione progetto</p>
 {#if currentStep == 0}
         <div id="form">
                 <TextField type="text" name="progetto" bind:value={projectName}>Nome progetto</TextField>
