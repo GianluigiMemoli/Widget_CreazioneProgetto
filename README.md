@@ -1,12 +1,8 @@
 # Widget Creazione Progetto
 
-Il widget serve a creare un progetto di reportistica
-
-
 ## Funzionalità del widget
 
-
-All'interno del widget saranno presenti delle funzionalità di base, esse sono relative ai caricamenti e a svariati messaggi informativi.
+Il widget di occupa di presentare un form per la creazione dei progetti di reportistica.
 
 ### showResult()
 Questo comando consentirà di mostrare il contenuto del file widget.svelte, esso servirà alla fine di ogni caricamento
